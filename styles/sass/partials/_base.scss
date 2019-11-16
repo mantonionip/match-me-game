@@ -1,3 +1,51 @@
-body {
-    background-color: tomato;
+* {
+    margin: 0;
+    padding: 0;
+    // border: 1px solid blue;
 }
+
+html {
+    font-size: 125%;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: $color-primary;
+    font-family: $font-primary;
+    font-size: 2.6rem;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    font-size: 5rem;
+    color: $color-light;
+    margin: 3rem 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: $font-primary;
+    color: $color-text;
+    border: none;
+}
+
+.wrapper {
+    max-width: 1440px;
+    width: 90%;
+    margin: 0 auto;
+}
+

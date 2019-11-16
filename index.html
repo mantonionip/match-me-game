@@ -4,13 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 3: How Artsie You Are!</title>
-    <!-- <link type="image/png" href="assets/favicon-shoes4.png" rel="icon"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Pompiere&display=swap" rel="stylesheet"> -->
+    <title>Match Me If You Can!</title>
+    <link type="image/png" href="assets/favicon-theatre-mask.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Barriecito|Muli:400,600&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+    <div>
+        <!-- Opening page starts here -->
+        
+        <header class="wrapper">
+            <div class="credit" id="credit">
+                <p class="creditLine">Illustration Credit to <a href="https://www.agoodson.com/illustrator/pablo/" target="_blank">Pablo Lobato</a></p>
+            </div>
+            <div class="title">
+                <h1>Match Me <span class="lineBreaker">If You Can!</span></h1>
+            </div>
+
+            <div class="startButton">
+                <button class="letsPlay" tabindex="0" aria-label="Click here to go to the game board"><spna class="shake">Let's Play</spna></button>
+            </div>
+        </header>
+        <!-- Opening page ends here -->
+
+        <!-- Main page displaying the game starts here -->
+        <main>
+            <div class="gridContainer wrapper">
+                
+                <!-- scoreboard starts here -->
+                <section class="scoreBoard">
+
+                    <div class="timeCounter">
+                        <time class="minutes" aria-label="Minutes:">00</time>:<time class="seconds" aria-label="Seconds">00</time>
+                    </div>
+
+                    <div class="attemptsCounter">
+                        <p class="counter">Attempts: 0</p>
+                    </div>
+                </section>
+                <!-- scoreboard ends here -->
+
+                <!-- memory game starts here -->
+                <section class="gamePitch">
+                    <ul class="cardContainer">
+                        <!-- dynamic JS code appears here -->
+                    </ul>
+
+                    <div class="textContainer">
+                        <!-- Text appears here with dynamic code -->
+                    </div>
+                </section>
+                <!-- memory game ends here -->
+
+                <!-- winning message starts here -->
+                <section class="winMessage">
+                    <h2>You Did It!</h2>
+                    <p class="score">Score displays here</p>
+                    <button class="resetButton">Match Me Again!</button>
+                </section>
+                <!-- winning message ends here -->
+            </div>
+        </main>
+        <!-- Main page ends here -->
+    </div>
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
