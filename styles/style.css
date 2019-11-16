@@ -251,7 +251,6 @@ body {
   background: #624294;
   font-family: "Barriecito", cursive, sans-serif;
   font-size: 2.6rem;
-  overflow: hidden;
 }
 
 img {
@@ -396,48 +395,39 @@ main {
 }
 
 .gamePitch .cardContainer {
+  width: 600px;
+  height: 600px;
   -webkit-box-flex: 0;
       -ms-flex: 0 50%;
           flex: 0 50%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (min-content)[4];
-      grid-template-rows: repeat(4, -webkit-min-content);
-      grid-template-rows: repeat(4, min-content);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 2%;
+  opacity: 1;
 }
 
 .gamePitch .cardContainer .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 16%;
   position: relative;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: background 0.3s, -webkit-transform 0.5s;
-  transition: background 0.3s, -webkit-transform 0.5s;
-  transition: transform 0.5s, background 0.3s;
-  transition: transform 0.5s, background 0.3s, -webkit-transform 0.5s;
-}
-
-.gamePitch .cardContainer:hover, .gamePitch .cardContainer:focus {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  background: yellow;
-}
-
-.gamePitch .cardContainer:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 .gamePitch .cardContainer .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
@@ -445,13 +435,30 @@ main {
 .gamePitch .cardContainer .front {
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
-  border-radius: 16%;
 }
 
 .gamePitch .cardContainer .back {
-  border-radius: 16%;
   -webkit-transform: rotateY(0);
           transform: rotateY(0);
+}
+
+.gamePitch .cardContainer .card.show .front {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.gamePitch .cardContainer .card.show .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.gamePitch .cardContainer .card.matched .front {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.gamePitch .cardContainer img {
+  border-radius: 20px;
 }
 
 .gamePitch .textContainer {

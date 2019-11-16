@@ -1,3 +1,6 @@
+// This link was the main guide to write the code for this game:
+// https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
+
 const matchApp = {};
 
 // Store CARDS in an array with 16 objects, each two are paired are identical.
@@ -142,16 +145,13 @@ matchApp.shuffle = function (array) {
 matchApp.displayCelebrities = (celebrityArray) => {
     celebrityArray.forEach( (celebrityItem) => {
         const listTag = $('<li>').addClass('card').attr('id', celebrityItem.id);
-        // const faceOfCard = $('.face').style.position = "absolute";
-        // const buttonFront = $('<div>').addClass('front face').attr('title', celebrityItem.title).attr('aria-label', celebrityItem['aria-label']);
-        const buttonFront = `<div class="front face"><img src="assets/camera-icon.jpg" alt="claket icon"</div>`;
-        const buttonBack = $('<div>').addClass('back face');
+        const buttonBack = `<div class="back face"><img src="assets/camera-icon.jpg" alt="claket icon"></div>`;
+        const buttonFront = $('<div>').addClass('front face');
         const image = $('<img>').attr('src', celebrityItem.url).attr('alt', celebrityItem.alt);
 
-        buttonBack.append(image);
+        buttonFront.append(image);
         
-
-        listTag.append(buttonFront, buttonBack);
+        listTag.append(buttonBack, buttonFront);
         $('.cardContainer').append(listTag);
     })
 }
@@ -160,6 +160,7 @@ matchApp.displayCelebrities = (celebrityArray) => {
 matchApp.userClick = function() {
     $('.cardContainer').on('click', '.card', function() {
         $(this).addClass('show selected')
+
         if($('.selected').length == 1) {
             matchApp.moveCounter();
         }
@@ -167,7 +168,7 @@ matchApp.userClick = function() {
 
             // if cards match
             if($('.selected').first().attr('id') == $('.selected').last().attr('id')) {
-                $('.selected').addClass('wiggle');
+                // $('.selected').addClass('wiggle');
                 setTimeout(() => {
                     $('.selected').removeClass('selected').addClass('matched');
                     matchApp.checkWin();
@@ -196,17 +197,17 @@ matchApp.startGame = function() {
             $('.letsPlay').removeClass('pressDown');
             setTimeout(() => {
                 $('header').slideUp('slow').addClass('slideUp')
-            }, 500)
-        }, 300)
+            }, 600)
+        }, 2000)
     });
 }
 
 // 5. Number of attempts that player makes. Every successful attempt adds one score
-let move = 0;
+let attempt = 0;
 matchApp.moveCounter = function() {
-    move += 1;
-    $('.counter').text(move);
-    if (move == 1) {
+    attempt += 1;
+    $('.counter').text(attempt);
+    if (attempt == 1) {
         matchApp.startTimer();
     }
 }
@@ -242,7 +243,7 @@ matchApp.restartGame = function() {
         $sec.text('00');
         $min.text('00');
         $('.counter').text('0');
-        move = 0;
+        attempt = 0;
         $('.card').remove();
         let randomCelebrities = matchApp.shuffle(matchApp.celebrities);
         matchApp.displayCelebrities(randomCelebrities);
@@ -253,7 +254,7 @@ matchApp.restartGame = function() {
 matchApp.checkWin = function() {
     if ($('.card.matched').length === matchApp.celebrities.length) {
         $('.winMessage').addClass('userWin');
-        $('.score').html(`You matched all the celebrities in ${totalSec} seconds with just ${move} attempts!!`)
+        $('.score').html(`You matched all the celebrities in ${totalSec} seconds with just ${attempt} attempts!!`)
         clearInterval(interval);
 
         $('.resetButton').on('click', function() {
@@ -262,7 +263,7 @@ matchApp.checkWin = function() {
             $sec.text('00');
             $min.text('00');
             $('.counter').text('0');
-            move = 0;
+            attempt = 0;
             $('.winMessage').removeClass('userWin');
             $('.card').remove();
             let randomCelebrities = matchApp.shuffle(matchApp.celebrities);
