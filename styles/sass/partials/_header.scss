@@ -1,61 +1,113 @@
 header {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    z-index: 99;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: $color-primary;
 
-    z-index: 100;
+    z-index: 199;
 
-    .credit {
-        position: absolute;
-        top: 20px;
-        right: 0;
+    .wrapper {
+        position: relative;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .creditLine {
-        font-family: $font-secondary;
-        font-size: 1rem;
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        text-align: center;
     }
 
     h1 {
-        text-align: center;
-        text-shadow: 7px 7px $color-shadow;
+        flex: 0 0 100%;
+        margin-top: -12%;
+        text-shadow: 3px 3px 3px $color-shadow;
+
+        @include respond-650 {
+            font-size: 6rem;
+        }
+
+        @include respond-500 {
+            font-size: 4rem;
+        }
     }
 
-    .lineBreaker {
+    span {
         display: block;
+        font-size: 4rem;
+        text-align: left;
+
+        @include respond-650 {
+            font-size: 2.6rem;
+        }
+
+         @include respond-500 {
+            font-size: 2rem;
+        }
     }
 
     .startButton {
         position: absolute;
-        bottom: 150px;
+        top: 58%;
+        width: 100%;
+        align-self: center;
     }
     
     button.letsPlay {
-        // position: relative;
-        background-color: $color-light;
-        border-radius: 20px;
         width: 300px;
         height: 80px;
-        top: 0;
+
+        font-size: 2.6rem;
+        letter-spacing: 3px;
+        background-color: $color-secondary;
+        color: $color-light;
+        border-radius: 20px;
         text-transform: uppercase;
-        // border: 2px solid $color-text;
-        box-shadow: 0 10px 0px $color-text;
+        cursor: pointer;
+        box-shadow: 0 7px 0px $color-quaternary;
+        
         transition: all .3s;
         transform: scale(1);
+
+        @include respond-650 {
+            width: 250px;
+            height: 70px;
+            font-size: 2.2rem;
+        }
+
+        @include respond-500 {
+            width: 220px;
+            height: 60px;
+            font-size: 2rem;
+        }
+
+         @include respond-400 {
+            width: 220px;
+            height: 60px;
+            font-size: 1.8rem;
+        }
 
 
         &:hover,
         &:focus {
-            // height: 115px;
-            // width: 350px;
-            // transform: scale(1.1);
+            width: 330px;
+            height: 100px;
+            transform: scale(1.1);
+
+            @include respond-768 {
+                width: 300px;
+                height: 80px;
+                transform: scale(1);
+            }
         }
 
         &:active,
@@ -64,11 +116,43 @@ header {
             top: 10px;
             box-shadow: none;
 
+            @include respond-768 {
+                top: 0;
+            }
+
         }
 
         &.pressDown {
             top: 0px;
-            box-shadow: 0px 4px 0px $color-text;
+            box-shadow: 0px 4px 0px $color-tertiary;
+        }
+    }
+
+    .heroSection {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .credit {
+        position: absolute;
+        bottom: 55%;
+        right: 0;
+
+        p {
+            @include respond-768 {
+                font-size: .6rem;
+            }
+        }
+    }
+
+    .creditLine {
+        font-family: $font-secondary;
+        color: lighten(#181e37, 10%);
+        font-size: .8rem;
+
+        a {
+            color: $color-light;
         }
     }
 }

@@ -1,91 +1,380 @@
+// MAIN PAGE STYLES
 main {
-    // position: absolute;
-    background-color: $color-light;
+    background-color: #e7e7e7;
     width: 100vw;
     height: 100vh;
-    // top: 0;
+    top: 0;
+
+    display: flex;
+    align-items: center;
 }
 
-
-.gridContainer {
+.gameContainer {
     display: flex;
     flex-direction: column;
 }
 
-.scoreBoard {
+
+.gridContainer {
+    position: relative;
     display: flex;
+    flex-direction: column;
+
+    // Scoreboard Section Styles
+    .scoreBoard {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     
-    .attemptsCounter,
-    .timeCounter {
-        border-radius: 20px;
-        padding: 6px 5px;
-        display: inline-block;
+        .timeCounter,
+        .attemptsCounter {
+            color: $color-quaternary;
+            border-radius: 20px;
+            padding: 6px 5px;
+
+            display: inline-block;
+
+            .minutes,
+            .seconds,
+            .counter {
+                font-size: 1.6rem;
+
+                @include respond-850 {
+                    font-size: 1.4rem;
+                }
+
+                @include respond-650 {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .timeCounter {
+            font-size: 1.6rem;
+            margin-right: 27%;
+
+            @include respond-1200 {
+                margin-right: 25%;
+            }
+
+            @include respond-850 {
+                margin-right: 27%;
+                font-size: 1.4rem;
+            }
+
+            @include respond-650 {
+                font-size: 1.2rem;
+                margin-right: 24%;
+            }
+
+            @include respond-500 {
+                margin-right: 22%;
+            }
+
+            @include respond-400 {
+                margin-right: 16%;
+            }
+
+            .fas {
+                color: $color-secondary;
+            }
+        }
     }
 }
+
 
 // Game Section Styles 
 .gamePitch {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 50%;
     
     .cardContainer {
-        width: 600px;
-        height: 600px;
-        flex: 0 50%;
+        width: 50%;
+        height: 45vw;
+        position: relative;
+
         display: grid;
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 2%;
-        opacity: 1;
+
+        @include respond-1025 {
+            width: 55%;
+            height: 50vw;
+        }
+
+        @include respond-850 {
+            width: 60%;
+            height: 55vw;
+        }
+
+        @include respond-650 {
+            width: 70%;
+            height: 65vw;
+        }
+
+        @include respond-500 {
+            width: 75%;
+            height: 70vw;
+        }
+
+        @include respond-400 {
+            width: 80%;
+            height: 75vw;
+        }
         
         .card {
-            display: flex;
             position: relative;
             width: 100%;
             height: 100%;
+
             cursor: pointer;
             perspective: 1000px;
-        }
 
+        }
+        
         .face {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
             transition: all 0.5s;
             backface-visibility: hidden;
         }
-
+        
         .front {
             transform: rotateY(-180deg);
         }
         
         .back {
+            background-color: $color-primary;
+            width: 100%;
+            border-radius: 15px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
             transform: rotateY(0);
+
+            img {
+                width: 70%;
+                filter: drop-shadow(2px 2px 5px #666);
+            }
         }
 
         .card.show .front {
             transform:  rotateY(0);
         }
 
-        .card.show .back {
+        .show .back {
             transform: rotateY(180deg);
         }
 
-        .card.matched {
+        .matched {
+
             .front {
                 transform: rotateY(0);
             }
         }
 
         img {
-            border-radius: 20px;
+            border-radius: 15px;
+        }
+    }
+    
+    .reduceOpacity {
+        opacity: 0.5;
+    }
+}
+
+
+// Winning Message Section Styles
+.winMessageContainer {
+    display: none;
+    position: absolute;
+    width: 47%;
+    height: 75%;
+    top: 54%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    // padding: 50px 0;
+    background-color: $color-secondary;
+    color: $color-quaternary;
+    box-shadow: 10px 10px $color-quaternary;
+    border-radius: 10px;
+    text-align: center;
+
+    @include respond-1280 {
+        width: 60%;
+        height: 85%;
+    }
+
+    @include respond-1100 {
+        width: 65%;
+        height: 85%;
+    }
+
+    @include respond-850 {
+        width: 70%;
+    }
+
+    @include respond-650 {
+        width: 80%;
+        height: 80%;
+    }
+
+    @include respond-550 {
+        width: 80%;
+        height: 80%;
+    }
+
+    @include respond-500 {
+        width: 85%;
+        height: 80%;
+    }
+
+    @include respond-400 {
+        top: 70%;
+        width: 90%;
+        height: 100%;
+    }
+
+
+    
+    .winMessage {
+        position: relative;
+        z-index: 100;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        padding: 14% 5%;
+
+        @include respond-1100 {
+            padding: 10% 5% 0 5%;
+        }
+
+        @include respond-850 {
+            padding: 12% 5% 0 5%;
+        }
+
+        @include respond-768 {
+            padding: 14% 5% 0 5%;
+        }
+
+        @include respond-500 {
+            padding: 12% 5% 0 5%;
+        }
+
+        @include respond-400 {
+            padding: 10% 2% 0 2%;
         }
     }
 
-    .textContainer {
-        border: 1px solid blue;
-        flex: 0 1 50%;
-        margin-left: 5%;
+    h2 {
+        font-size: 3rem;
+        text-transform: uppercase;
+
+        @include respond-1100 {
+            font-size: 2.5rem;
+        }
+
+        @include respond-768 {
+            font-size: 2.2rem;
+        }
+
+        @include respond-500 {
+            font-size: 1.8rem;
+        }
     }
+
+    p.score {
+        text-transform: uppercase;
+        font-family: $font-tertiary;
+        font-size: 1.8rem;
+        line-height: 1.4;
+        padding: 30px 5px;
+
+        @include respond-850 {
+            font-size: 1.6rem;
+        }
+
+        @include respond-768 {
+            font-size: 1.4rem;
+            padding: 20px 3px;
+        }
+
+        @include respond-500 {
+            font-size: 1.2rem;
+        }
+    }
+
+    span.inlineSpan {
+        color: $color-light;
+    }
+
+
+    .resetButton {
+        border-radius: 20px;
+        display: block;
+        margin: 0 auto;
+        width: 75%;
+        height: 80px;
+
+        font-size: 2rem;
+        background-color: $color-quaternary;
+        color: $color-light;
+        text-shadow: -1px 1px 0px #56396D;
+        box-shadow: 0px 5px 0px $color-primary;
+
+        @include respond-1100 {
+            width: 60%;
+            height: 70px;
+            font-size: 1.6rem;
+        }
+
+        @include respond-768 {
+            width: 65%;
+            height: 60px;
+            font-size: 1.4rem;
+        }
+
+        @include respond-768 {
+            width: 60%;
+            height: 55px;
+            font-size: 1.2rem;
+        }
+
+        @include respond-400 {
+            font-size: 1rem;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-quaternary, 20%);
+        }
+
+        &:active {
+            position: relative;
+            top: 5px;
+            box-shadow: none;
+        }
+    }
+}
+
+.winMessageContainer.userWin {
+    display: block;
 }
 
 

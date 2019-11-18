@@ -248,9 +248,10 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #624294;
-  font-family: "Barriecito", cursive, sans-serif;
+  background: #4cc3c6;
+  font-family: "Boogaloo", cursive;
   font-size: 2.6rem;
+  overflow: hidden;
 }
 
 img {
@@ -259,7 +260,8 @@ img {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 8rem;
+  line-height: 1;
   color: #FFF;
   margin: 3rem 0;
 }
@@ -273,23 +275,31 @@ a {
 }
 
 button {
-  font-family: "Barriecito", cursive, sans-serif;
+  font-family: "Boogaloo", cursive;
   color: #FFCC00;
   border: none;
 }
 
 .wrapper {
-  max-width: 1440px;
+  max-width: 1680px;
   width: 90%;
   margin: 0 auto;
 }
 
 header {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  z-index: 99;
+  background-color: #4cc3c6;
+  z-index: 199;
+}
+
+header .wrapper {
+  position: relative;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,50 +310,125 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+header .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 100;
-}
-
-header .credit {
-  position: absolute;
-  top: 20px;
-  right: 0;
-}
-
-header .creditLine {
-  font-family: "Muli", sans-serif;
-  font-size: 1rem;
+  text-align: center;
 }
 
 header h1 {
-  text-align: center;
-  text-shadow: 7px 7px #4B2F77;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  margin-top: -12%;
+  text-shadow: 3px 3px 3px rgba(101, 36, 33, 0.6);
 }
 
-header .lineBreaker {
+@media (max-width: 650px) {
+  header h1 {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
+
+header span {
   display: block;
+  font-size: 4rem;
+  text-align: left;
+}
+
+@media (max-width: 650px) {
+  header span {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header span {
+    font-size: 2rem;
+  }
 }
 
 header .startButton {
   position: absolute;
-  bottom: 150px;
+  top: 58%;
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 header button.letsPlay {
-  background-color: #FFF;
-  border-radius: 20px;
   width: 300px;
   height: 80px;
-  top: 0;
+  font-size: 2.6rem;
+  letter-spacing: 3px;
+  background-color: #ffc23b;
+  color: #FFF;
+  border-radius: 20px;
   text-transform: uppercase;
-  -webkit-box-shadow: 0 10px 0px #FFCC00;
-          box-shadow: 0 10px 0px #FFCC00;
+  cursor: pointer;
+  -webkit-box-shadow: 0 7px 0px #181e37;
+          box-shadow: 0 7px 0px #181e37;
   -webkit-transition: all .3s;
   transition: all .3s;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+@media (max-width: 650px) {
+  header button.letsPlay {
+    width: 250px;
+    height: 70px;
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header button.letsPlay {
+    width: 220px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header button.letsPlay {
+    width: 220px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+}
+
+header button.letsPlay:hover, header button.letsPlay:focus {
+  width: 330px;
+  height: 100px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  header button.letsPlay:hover, header button.letsPlay:focus {
+    width: 300px;
+    height: 80px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 header button.letsPlay:active, header button.letsPlay:focus {
@@ -353,19 +438,60 @@ header button.letsPlay:active, header button.letsPlay:focus {
           box-shadow: none;
 }
 
+@media (max-width: 768px) {
+  header button.letsPlay:active, header button.letsPlay:focus {
+    top: 0;
+  }
+}
+
 header button.letsPlay.pressDown {
   top: 0px;
   -webkit-box-shadow: 0px 4px 0px #FFCC00;
           box-shadow: 0px 4px 0px #FFCC00;
 }
 
-main {
-  background-color: #FFF;
-  width: 100vw;
-  height: 100vh;
+header .heroSection {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-.gridContainer {
+header .credit {
+  position: absolute;
+  bottom: 55%;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  header .credit p {
+    font-size: .6rem;
+  }
+}
+
+header .creditLine {
+  font-family: "Lato", sans-serif;
+  color: #27315b;
+  font-size: .8rem;
+}
+
+header .creditLine a {
+  color: #FFF;
+}
+
+main {
+  background-color: #e7e7e7;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gameContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -375,31 +501,129 @@ main {
           flex-direction: column;
 }
 
-.scoreBoard {
+.gridContainer {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.scoreBoard .attemptsCounter,
-.scoreBoard .timeCounter {
+.gridContainer .scoreBoard {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gridContainer .scoreBoard .timeCounter,
+.gridContainer .scoreBoard .attemptsCounter {
+  color: #181e37;
   border-radius: 20px;
   padding: 6px 5px;
   display: inline-block;
+}
+
+.gridContainer .scoreBoard .timeCounter .minutes,
+.gridContainer .scoreBoard .timeCounter .seconds,
+.gridContainer .scoreBoard .timeCounter .counter,
+.gridContainer .scoreBoard .attemptsCounter .minutes,
+.gridContainer .scoreBoard .attemptsCounter .seconds,
+.gridContainer .scoreBoard .attemptsCounter .counter {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 850px) {
+  .gridContainer .scoreBoard .timeCounter .minutes,
+  .gridContainer .scoreBoard .timeCounter .seconds,
+  .gridContainer .scoreBoard .timeCounter .counter,
+  .gridContainer .scoreBoard .attemptsCounter .minutes,
+  .gridContainer .scoreBoard .attemptsCounter .seconds,
+  .gridContainer .scoreBoard .attemptsCounter .counter {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .gridContainer .scoreBoard .timeCounter .minutes,
+  .gridContainer .scoreBoard .timeCounter .seconds,
+  .gridContainer .scoreBoard .timeCounter .counter,
+  .gridContainer .scoreBoard .attemptsCounter .minutes,
+  .gridContainer .scoreBoard .attemptsCounter .seconds,
+  .gridContainer .scoreBoard .attemptsCounter .counter {
+    font-size: 1.2rem;
+  }
+}
+
+.gridContainer .scoreBoard .timeCounter {
+  font-size: 1.6rem;
+  margin-right: 27%;
+}
+
+@media (max-width: 1200px) {
+  .gridContainer .scoreBoard .timeCounter {
+    margin-right: 25%;
+  }
+}
+
+@media (max-width: 850px) {
+  .gridContainer .scoreBoard .timeCounter {
+    margin-right: 27%;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .gridContainer .scoreBoard .timeCounter {
+    font-size: 1.2rem;
+    margin-right: 24%;
+  }
+}
+
+@media (max-width: 500px) {
+  .gridContainer .scoreBoard .timeCounter {
+    margin-right: 22%;
+  }
+}
+
+@media (max-width: 400px) {
+  .gridContainer .scoreBoard .timeCounter {
+    margin-right: 16%;
+  }
+}
+
+.gridContainer .scoreBoard .timeCounter .fas {
+  color: #ffc23b;
 }
 
 .gamePitch {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
 }
 
 .gamePitch .cardContainer {
-  width: 600px;
-  height: 600px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 50%;
-          flex: 0 50%;
+  width: 50%;
+  height: 45vw;
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[4];
@@ -407,13 +631,44 @@ main {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 2%;
-  opacity: 1;
+}
+
+@media (max-width: 1025px) {
+  .gamePitch .cardContainer {
+    width: 55%;
+    height: 50vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .gamePitch .cardContainer {
+    width: 60%;
+    height: 55vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .gamePitch .cardContainer {
+    width: 70%;
+    height: 65vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .gamePitch .cardContainer {
+    width: 75%;
+    height: 70vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .gamePitch .cardContainer {
+    width: 80%;
+    height: 75vw;
+  }
 }
 
 .gamePitch .cardContainer .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
   width: 100%;
   height: 100%;
@@ -424,8 +679,10 @@ main {
 
 .gamePitch .cardContainer .face {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-backface-visibility: hidden;
@@ -438,8 +695,26 @@ main {
 }
 
 .gamePitch .cardContainer .back {
+  background-color: #4cc3c6;
+  width: 100%;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transform: rotateY(0);
           transform: rotateY(0);
+}
+
+.gamePitch .cardContainer .back img {
+  width: 70%;
+  -webkit-filter: drop-shadow(2px 2px 5px #666);
+          filter: drop-shadow(2px 2px 5px #666);
 }
 
 .gamePitch .cardContainer .card.show .front {
@@ -447,24 +722,395 @@ main {
           transform: rotateY(0);
 }
 
-.gamePitch .cardContainer .card.show .back {
+.gamePitch .cardContainer .show .back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.gamePitch .cardContainer .card.matched .front {
+.gamePitch .cardContainer .matched .front {
   -webkit-transform: rotateY(0);
           transform: rotateY(0);
 }
 
 .gamePitch .cardContainer img {
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
-.gamePitch .textContainer {
-  border: 1px solid blue;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
-  margin-left: 5%;
+.gamePitch .reduceOpacity {
+  opacity: 0.5;
+}
+
+.winMessageContainer {
+  display: none;
+  position: absolute;
+  width: 47%;
+  height: 75%;
+  top: 54%;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 99;
+  background-color: #ffc23b;
+  color: #181e37;
+  -webkit-box-shadow: 10px 10px #181e37;
+          box-shadow: 10px 10px #181e37;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media (max-width: 1280px) {
+  .winMessageContainer {
+    width: 60%;
+    height: 85%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .winMessageContainer {
+    width: 65%;
+    height: 85%;
+  }
+}
+
+@media (max-width: 850px) {
+  .winMessageContainer {
+    width: 70%;
+  }
+}
+
+@media (max-width: 650px) {
+  .winMessageContainer {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 550px) {
+  .winMessageContainer {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .winMessageContainer {
+    width: 85%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .winMessageContainer {
+    top: 70%;
+    width: 90%;
+    height: 100%;
+  }
+}
+
+.winMessageContainer .winMessage {
+  position: relative;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 14% 5%;
+}
+
+@media (max-width: 1100px) {
+  .winMessageContainer .winMessage {
+    padding: 10% 5% 0 5%;
+  }
+}
+
+@media (max-width: 850px) {
+  .winMessageContainer .winMessage {
+    padding: 12% 5% 0 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .winMessageContainer .winMessage {
+    padding: 14% 5% 0 5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .winMessageContainer .winMessage {
+    padding: 12% 5% 0 5%;
+  }
+}
+
+@media (max-width: 400px) {
+  .winMessageContainer .winMessage {
+    padding: 10% 2% 0 2%;
+  }
+}
+
+.winMessageContainer h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+  .winMessageContainer h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .winMessageContainer h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .winMessageContainer h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.winMessageContainer p.score {
+  text-transform: uppercase;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  padding: 30px 5px;
+}
+
+@media (max-width: 850px) {
+  .winMessageContainer p.score {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .winMessageContainer p.score {
+    font-size: 1.4rem;
+    padding: 20px 3px;
+  }
+}
+
+@media (max-width: 500px) {
+  .winMessageContainer p.score {
+    font-size: 1.2rem;
+  }
+}
+
+.winMessageContainer span.inlineSpan {
+  color: #FFF;
+}
+
+.winMessageContainer .resetButton {
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+  height: 80px;
+  font-size: 2rem;
+  background-color: #181e37;
+  color: #FFF;
+  text-shadow: -1px 1px 0px #56396D;
+  -webkit-box-shadow: 0px 5px 0px #4cc3c6;
+          box-shadow: 0px 5px 0px #4cc3c6;
+}
+
+@media (max-width: 1100px) {
+  .winMessageContainer .resetButton {
+    width: 60%;
+    height: 70px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .winMessageContainer .resetButton {
+    width: 65%;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .winMessageContainer .resetButton {
+    width: 60%;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .winMessageContainer .resetButton {
+    font-size: 1rem;
+  }
+}
+
+.winMessageContainer .resetButton:hover, .winMessageContainer .resetButton:focus {
+  background-color: black;
+}
+
+.winMessageContainer .resetButton:active {
+  position: relative;
+  top: 5px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.winMessageContainer.userWin {
+  display: block;
+}
+
+.instructions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 300;
+}
+
+.instructionModal {
+  width: 700px;
+  height: 700px;
+  background-color: #181e37;
+  color: #FFF;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.6);
+          box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.6);
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 850px) {
+  .instructionModal {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 550px) {
+  .instructionModal {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.instructionModal .closeInstructions {
+  display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 1rem 0 0 1.5rem;
+  font-size: 3rem;
+  color: #ffc23b;
+}
+
+@media (max-width: 850px) {
+  .instructionModal .closeInstructions {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal .closeInstructions {
+    font-size: 1.6rem;
+  }
+}
+
+.instructionModal h2 {
+  font-size: 3rem;
+}
+
+@media (max-width: 850px) {
+  .instructionModal h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .instructionModal h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.instructionModal p {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  padding: 50px 50px;
+}
+
+@media (max-width: 850px) {
+  .instructionModal p {
+    font-size: 1.6rem;
+    padding: 25px 35px;
+  }
+}
+
+@media (max-width: 550px) {
+  .instructionModal p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal p {
+    font-size: .9rem;
+  }
+}
+
+.instructionModal span {
+  color: #ffc23b;
+}
+
+.instructionModal img {
+  width: 25%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 850px) {
+  .instructionModal img {
+    width: 20%;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal img {
+    bottom: 2%;
+    right: 2%;
+    width: 15%;
+  }
 }
