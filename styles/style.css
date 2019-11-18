@@ -312,7 +312,8 @@ header .wrapper {
           justify-content: center;
 }
 
-header .title {
+header .gameTitle {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,7 +324,6 @@ header .title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
 }
 
 header h1 {
@@ -373,18 +373,18 @@ header .startButton {
       align-self: center;
 }
 
-header button.letsPlay {
+header .letsPlay {
   width: 300px;
   height: 80px;
   font-size: 2.6rem;
   letter-spacing: 3px;
+  text-transform: uppercase;
   background-color: #ffc23b;
   color: #FFF;
-  border-radius: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
   -webkit-box-shadow: 0 7px 0px #181e37;
           box-shadow: 0 7px 0px #181e37;
+  border-radius: 20px;
+  cursor: pointer;
   -webkit-transition: all .3s;
   transition: all .3s;
   -webkit-transform: scale(1);
@@ -392,7 +392,7 @@ header button.letsPlay {
 }
 
 @media (max-width: 650px) {
-  header button.letsPlay {
+  header .letsPlay {
     width: 250px;
     height: 70px;
     font-size: 2.2rem;
@@ -400,7 +400,7 @@ header button.letsPlay {
 }
 
 @media (max-width: 500px) {
-  header button.letsPlay {
+  header .letsPlay {
     width: 220px;
     height: 60px;
     font-size: 2rem;
@@ -408,14 +408,14 @@ header button.letsPlay {
 }
 
 @media (max-width: 400px) {
-  header button.letsPlay {
+  header .letsPlay {
     width: 220px;
     height: 60px;
     font-size: 1.8rem;
   }
 }
 
-header button.letsPlay:hover, header button.letsPlay:focus {
+header .letsPlay:hover, header .letsPlay:focus {
   width: 330px;
   height: 100px;
   -webkit-transform: scale(1.1);
@@ -423,7 +423,7 @@ header button.letsPlay:hover, header button.letsPlay:focus {
 }
 
 @media (max-width: 768px) {
-  header button.letsPlay:hover, header button.letsPlay:focus {
+  header .letsPlay:hover, header .letsPlay:focus {
     width: 300px;
     height: 80px;
     -webkit-transform: scale(1);
@@ -431,7 +431,7 @@ header button.letsPlay:hover, header button.letsPlay:focus {
   }
 }
 
-header button.letsPlay:active, header button.letsPlay:focus {
+header .letsPlay:active, header .letsPlay:focus {
   position: relative;
   top: 10px;
   -webkit-box-shadow: none;
@@ -439,18 +439,18 @@ header button.letsPlay:active, header button.letsPlay:focus {
 }
 
 @media (max-width: 768px) {
-  header button.letsPlay:active, header button.letsPlay:focus {
+  header .letsPlay:active, header .letsPlay:focus {
     top: 0;
   }
 }
 
-header button.letsPlay.pressDown {
+header .letsPlay.pressDown {
   top: 0px;
   -webkit-box-shadow: 0px 4px 0px #FFCC00;
           box-shadow: 0px 4px 0px #FFCC00;
 }
 
-header .heroSection {
+header .heroImage {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -605,7 +605,7 @@ main {
   color: #ffc23b;
 }
 
-.gamePitch {
+.gameGround {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -620,7 +620,7 @@ main {
           flex: 0 0 50%;
 }
 
-.gamePitch .cardContainer {
+.gameGround .cardContainer {
   width: 50%;
   height: 45vw;
   position: relative;
@@ -634,41 +634,41 @@ main {
 }
 
 @media (max-width: 1025px) {
-  .gamePitch .cardContainer {
+  .gameGround .cardContainer {
     width: 55%;
     height: 50vw;
   }
 }
 
 @media (max-width: 850px) {
-  .gamePitch .cardContainer {
+  .gameGround .cardContainer {
     width: 60%;
     height: 55vw;
   }
 }
 
 @media (max-width: 650px) {
-  .gamePitch .cardContainer {
+  .gameGround .cardContainer {
     width: 70%;
     height: 65vw;
   }
 }
 
 @media (max-width: 500px) {
-  .gamePitch .cardContainer {
+  .gameGround .cardContainer {
     width: 75%;
     height: 70vw;
   }
 }
 
 @media (max-width: 400px) {
-  .gamePitch .cardContainer {
+  .gameGround .cardContainer {
     width: 80%;
     height: 75vw;
   }
 }
 
-.gamePitch .cardContainer .card {
+.gameGround .cardContainer .card {
   position: relative;
   width: 100%;
   height: 100%;
@@ -677,7 +677,7 @@ main {
           perspective: 1000px;
 }
 
-.gamePitch .cardContainer .face {
+.gameGround .cardContainer .face {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -689,12 +689,12 @@ main {
           backface-visibility: hidden;
 }
 
-.gamePitch .cardContainer .front {
+.gameGround .cardContainer .front {
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
 }
 
-.gamePitch .cardContainer .back {
+.gameGround .cardContainer .back {
   background-color: #4cc3c6;
   width: 100%;
   border-radius: 15px;
@@ -709,35 +709,198 @@ main {
           align-items: center;
   -webkit-transform: rotateY(0);
           transform: rotateY(0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
-.gamePitch .cardContainer .back img {
+.gameGround .cardContainer .back img {
   width: 70%;
   -webkit-filter: drop-shadow(2px 2px 5px #666);
           filter: drop-shadow(2px 2px 5px #666);
 }
 
-.gamePitch .cardContainer .card.show .front {
+.gameGround .cardContainer .back:hover, .gameGround .cardContainer .backfocus {
+  background-color: #99dddf;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .gameGround .cardContainer .back:hover, .gameGround .cardContainer .backfocus {
+    background-color: #4cc3c6;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.gameGround .cardContainer .card.show .front {
   -webkit-transform: rotateY(0);
           transform: rotateY(0);
 }
 
-.gamePitch .cardContainer .show .back {
+.gameGround .cardContainer .show .back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.gamePitch .cardContainer .matched .front {
+.gameGround .cardContainer .matched .front {
   -webkit-transform: rotateY(0);
           transform: rotateY(0);
 }
 
-.gamePitch .cardContainer img {
+.gameGround .cardContainer img {
   border-radius: 15px;
 }
 
-.gamePitch .reduceOpacity {
+.gameGround .reduceOpacity {
   opacity: 0.5;
+}
+
+.instructions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 300;
+}
+
+.instructionModal {
+  width: 700px;
+  height: 700px;
+  background-color: #181e37;
+  color: #FFF;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.6);
+          box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.6);
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 850px) {
+  .instructionModal {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 550px) {
+  .instructionModal {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.instructionModal .closeInstructions {
+  display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 1rem 0 0 1.5rem;
+  font-size: 3rem;
+  color: #ffc23b;
+}
+
+@media (max-width: 850px) {
+  .instructionModal .closeInstructions {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal .closeInstructions {
+    font-size: 1.6rem;
+  }
+}
+
+.instructionModal h2 {
+  font-size: 3rem;
+}
+
+@media (max-width: 850px) {
+  .instructionModal h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .instructionModal h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.instructionModal p {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  padding: 50px 50px;
+}
+
+@media (max-width: 850px) {
+  .instructionModal p {
+    font-size: 1.6rem;
+    padding: 25px 35px;
+  }
+}
+
+@media (max-width: 550px) {
+  .instructionModal p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal p {
+    font-size: .9rem;
+  }
+}
+
+.instructionModal span {
+  color: #ffc23b;
+}
+
+.instructionModal img {
+  width: 25%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 850px) {
+  .instructionModal img {
+    width: 20%;
+  }
+}
+
+@media (max-width: 400px) {
+  .instructionModal img {
+    bottom: 2%;
+    right: 2%;
+    width: 15%;
+  }
 }
 
 .winMessageContainer {
@@ -966,151 +1129,4 @@ main {
 
 .winMessageContainer.userWin {
   display: block;
-}
-
-.instructions {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 300;
-}
-
-.instructionModal {
-  width: 700px;
-  height: 700px;
-  background-color: #181e37;
-  color: #FFF;
-  border-radius: 20px;
-  -webkit-box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.6);
-          box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.6);
-  z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (max-width: 850px) {
-  .instructionModal {
-    width: 500px;
-    height: 500px;
-  }
-}
-
-@media (max-width: 550px) {
-  .instructionModal {
-    width: 380px;
-    height: 380px;
-  }
-}
-
-@media (max-width: 400px) {
-  .instructionModal {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.instructionModal .closeInstructions {
-  display: inline-block;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin: 1rem 0 0 1.5rem;
-  font-size: 3rem;
-  color: #ffc23b;
-}
-
-@media (max-width: 850px) {
-  .instructionModal .closeInstructions {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .instructionModal .closeInstructions {
-    font-size: 1.6rem;
-  }
-}
-
-.instructionModal h2 {
-  font-size: 3rem;
-}
-
-@media (max-width: 850px) {
-  .instructionModal h2 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 550px) {
-  .instructionModal h2 {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .instructionModal h2 {
-    font-size: 1.4rem;
-  }
-}
-
-.instructionModal p {
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  font-size: 2rem;
-  line-height: 1.4;
-  padding: 50px 50px;
-}
-
-@media (max-width: 850px) {
-  .instructionModal p {
-    font-size: 1.6rem;
-    padding: 25px 35px;
-  }
-}
-
-@media (max-width: 550px) {
-  .instructionModal p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    padding: 15px 30px;
-  }
-}
-
-@media (max-width: 400px) {
-  .instructionModal p {
-    font-size: .9rem;
-  }
-}
-
-.instructionModal span {
-  color: #ffc23b;
-}
-
-.instructionModal img {
-  width: 25%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-@media (max-width: 850px) {
-  .instructionModal img {
-    width: 20%;
-  }
-}
-
-@media (max-width: 400px) {
-  .instructionModal img {
-    bottom: 2%;
-    right: 2%;
-    width: 15%;
-  }
 }
