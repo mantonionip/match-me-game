@@ -4,3 +4,5 @@
 
 ### Live on GitHub pages:
 https://mantonionip.github.io/mehdiPilehvarianProjectThree/
+
+#### JavaScript | jQuery | Sass
