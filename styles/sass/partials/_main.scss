@@ -48,15 +48,19 @@ main {
                 @include respond-650 {
                     font-size: 1.2rem;
                 }
+
+                @include respond-500 {
+                    font-size: 1rem;
+                }
             }
         }
 
         .timeCounter {
             font-size: 1.6rem;
-            margin-right: 27%;
+            margin-right: 23%;
 
             @include respond-1200 {
-                margin-right: 25%;
+                margin-right: 20%;
             }
 
             @include respond-850 {
@@ -66,15 +70,15 @@ main {
 
             @include respond-650 {
                 font-size: 1.2rem;
-                margin-right: 24%;
+                margin-right: 35%;
             }
 
             @include respond-500 {
-                margin-right: 22%;
+                margin-right: 33%;
             }
 
             @include respond-400 {
-                margin-right: 16%;
+                margin-right: 30%;
             }
 
             .fas {
@@ -93,8 +97,8 @@ main {
     flex: 0 0 50%;
     
     .cardContainer {
-        width: 50%;
-        height: 45vw;
+        width: 45%;
+        height: 40vw;
         position: relative;
 
         display: grid;
@@ -102,29 +106,29 @@ main {
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 2%;
 
-        @include respond-1025 {
+        @include respond-1100 {
             width: 55%;
             height: 50vw;
         }
 
         @include respond-850 {
-            width: 60%;
-            height: 55vw;
+            width: 65%;
+            height: 59vw;
         }
 
         @include respond-650 {
-            width: 70%;
-            height: 65vw;
+            width: 80%;
+            height: 72vw;
         }
 
         @include respond-500 {
-            width: 75%;
-            height: 70vw;
+            width: 85%;
+            height: 75vw;
         }
 
         @include respond-400 {
-            width: 80%;
-            height: 75vw;
+            width: 100%;
+            height: 85vw;
         }
         
         .card {
@@ -170,7 +174,7 @@ main {
             }
 
             &:hover,
-            &focus {
+            &:focus {
                 background-color: lighten($color-primary, 20%);
                 transform: scale(1.05);
 

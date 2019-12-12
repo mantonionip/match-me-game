@@ -33,6 +33,11 @@ ul, li {
     list-style: none;
 }
 
+li:focus-within, 
+li:active {
+    outline: 1px solid blue;
+}
+
 a {
     text-decoration: none;
 }

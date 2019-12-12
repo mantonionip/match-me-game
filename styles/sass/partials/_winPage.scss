@@ -3,8 +3,8 @@
     display: none;
 
     position: absolute;
-    width: 47%;
-    height: 75%;
+    width: 60%;
+    height: 670px;
     top: 54%;
     bottom: 0;
     left: 50%;
@@ -14,43 +14,34 @@
 
     background-color: $color-secondary;
     color: $color-quaternary;
-    box-shadow: 10px 10px $color-quaternary;
+    box-shadow: 15px 15px lighten($color-quaternary, 10%);
     border-radius: 10px;
     text-align: center;
 
-    @include respond-1280 {
-        width: 60%;
-        height: 85%;
-    }
-
     @include respond-1100 {
         width: 65%;
-        height: 85%;
     }
 
     @include respond-850 {
         width: 70%;
+        height: 600px;
     }
 
     @include respond-650 {
-        width: 80%;
-        height: 80%;
-    }
-
-    @include respond-550 {
-        width: 80%;
-        height: 80%;
+        width: 90%;
+        height: 550px;
     }
 
     @include respond-500 {
-        width: 85%;
-        height: 80%;
+        width: 90%;
+        height: 440px;
     }
 
     @include respond-400 {
-        top: 70%;
-        width: 90%;
+        top: 50%;
+        width: 100%;
         height: 100%;
+        box-shadow: 10px 10px lighten($color-quaternary, 10%);
     }
     
     .winMessage {
@@ -61,26 +52,22 @@
         flex-direction: column;
         align-items: center;
         
-        padding: 14% 5%;
+        padding: 18% 5%;
 
         @include respond-1100 {
-            padding: 10% 5% 0 5%;
+            padding: 25% 5% 0 5%;
         }
 
         @include respond-850 {
-            padding: 12% 5% 0 5%;
+            padding: 25% 5% 0 5%;
         }
 
         @include respond-768 {
-            padding: 14% 5% 0 5%;
-        }
-
-        @include respond-500 {
-            padding: 12% 5% 0 5%;
+            padding: 25% 5% 0 5%;
         }
 
         @include respond-400 {
-            padding: 10% 2% 0 2%;
+            padding: 20% 5% 0 2%;
         }
     }
 
@@ -93,7 +80,7 @@
         }
 
         @include respond-768 {
-            font-size: 2.2rem;
+            font-size: 3.6rem;
         }
 
         @include respond-500 {
@@ -104,7 +91,8 @@
     p.score {
         text-transform: uppercase;
         font-family: $font-tertiary;
-        font-size: 1.8rem;
+        font-size: 2rem;
+        letter-spacing: 2px;
         line-height: 1.4;
         padding: 30px 5px;
 
@@ -118,7 +106,7 @@
         }
 
         @include respond-500 {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
     }
 

@@ -270,6 +270,11 @@ ul, li {
   list-style: none;
 }
 
+li:focus-within,
+li:active {
+  outline: 1px solid blue;
+}
+
 a {
   text-decoration: none;
 }
@@ -326,12 +331,28 @@ header .gameTitle {
           align-items: center;
 }
 
+header header.slideUp {
+  top: -300vh;
+}
+
 header h1 {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
-  margin-top: -12%;
+  margin-top: -16%;
   text-shadow: 3px 3px 3px rgba(101, 36, 33, 0.6);
+}
+
+@media (max-width: 1100px) {
+  header h1 {
+    margin-top: -20%;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    margin-top: -22%;
+  }
 }
 
 @media (max-width: 650px) {
@@ -366,8 +387,9 @@ header span {
 
 header .startButton {
   position: absolute;
-  top: 58%;
+  top: 55%;
   width: 100%;
+  height: 80px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -403,7 +425,7 @@ header .letsPlay {
   header .letsPlay {
     width: 220px;
     height: 60px;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -411,7 +433,7 @@ header .letsPlay {
   header .letsPlay {
     width: 220px;
     height: 60px;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -422,12 +444,10 @@ header .letsPlay:hover, header .letsPlay:focus {
           transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 550px) {
   header .letsPlay:hover, header .letsPlay:focus {
-    width: 300px;
+    width: 260px;
     height: 80px;
-    -webkit-transform: scale(1);
-            transform: scale(1);
   }
 }
 
@@ -564,14 +584,25 @@ main {
   }
 }
 
+@media (max-width: 500px) {
+  .gridContainer .scoreBoard .timeCounter .minutes,
+  .gridContainer .scoreBoard .timeCounter .seconds,
+  .gridContainer .scoreBoard .timeCounter .counter,
+  .gridContainer .scoreBoard .attemptsCounter .minutes,
+  .gridContainer .scoreBoard .attemptsCounter .seconds,
+  .gridContainer .scoreBoard .attemptsCounter .counter {
+    font-size: 1rem;
+  }
+}
+
 .gridContainer .scoreBoard .timeCounter {
   font-size: 1.6rem;
-  margin-right: 27%;
+  margin-right: 23%;
 }
 
 @media (max-width: 1200px) {
   .gridContainer .scoreBoard .timeCounter {
-    margin-right: 25%;
+    margin-right: 20%;
   }
 }
 
@@ -585,19 +616,19 @@ main {
 @media (max-width: 650px) {
   .gridContainer .scoreBoard .timeCounter {
     font-size: 1.2rem;
-    margin-right: 24%;
+    margin-right: 35%;
   }
 }
 
 @media (max-width: 500px) {
   .gridContainer .scoreBoard .timeCounter {
-    margin-right: 22%;
+    margin-right: 33%;
   }
 }
 
 @media (max-width: 400px) {
   .gridContainer .scoreBoard .timeCounter {
-    margin-right: 16%;
+    margin-right: 30%;
   }
 }
 
@@ -621,8 +652,8 @@ main {
 }
 
 .gameGround .cardContainer {
-  width: 50%;
-  height: 45vw;
+  width: 45%;
+  height: 40vw;
   position: relative;
   display: -ms-grid;
   display: grid;
@@ -633,7 +664,7 @@ main {
   grid-gap: 2%;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1100px) {
   .gameGround .cardContainer {
     width: 55%;
     height: 50vw;
@@ -642,29 +673,29 @@ main {
 
 @media (max-width: 850px) {
   .gameGround .cardContainer {
-    width: 60%;
-    height: 55vw;
+    width: 65%;
+    height: 59vw;
   }
 }
 
 @media (max-width: 650px) {
   .gameGround .cardContainer {
-    width: 70%;
-    height: 65vw;
+    width: 80%;
+    height: 72vw;
   }
 }
 
 @media (max-width: 500px) {
   .gameGround .cardContainer {
-    width: 75%;
-    height: 70vw;
+    width: 85%;
+    height: 75vw;
   }
 }
 
 @media (max-width: 400px) {
   .gameGround .cardContainer {
-    width: 80%;
-    height: 75vw;
+    width: 100%;
+    height: 85vw;
   }
 }
 
@@ -719,14 +750,14 @@ main {
           filter: drop-shadow(2px 2px 5px #666);
 }
 
-.gameGround .cardContainer .back:hover, .gameGround .cardContainer .backfocus {
+.gameGround .cardContainer .back:hover, .gameGround .cardContainer .back:focus {
   background-color: #99dddf;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .gameGround .cardContainer .back:hover, .gameGround .cardContainer .backfocus {
+  .gameGround .cardContainer .back:hover, .gameGround .cardContainer .back:focus {
     background-color: #4cc3c6;
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -788,6 +819,13 @@ main {
 
 @media (max-width: 850px) {
   .instructionModal {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 650px) {
+  .instructionModal {
     width: 500px;
     height: 500px;
   }
@@ -795,15 +833,29 @@ main {
 
 @media (max-width: 550px) {
   .instructionModal {
-    width: 380px;
-    height: 380px;
+    width: 440px;
+    height: 440px;
+  }
+}
+
+@media (max-width: 500px) {
+  .instructionModal {
+    width: 410px;
+    height: 410px;
+  }
+}
+
+@media (max-width: 450px) {
+  .instructionModal {
+    width: 390px;
+    height: 390px;
   }
 }
 
 @media (max-width: 400px) {
   .instructionModal {
     width: 300px;
-    height: 300px;
+    height: 330px;
   }
 }
 
@@ -906,8 +958,8 @@ main {
 .winMessageContainer {
   display: none;
   position: absolute;
-  width: 47%;
-  height: 75%;
+  width: 60%;
+  height: 670px;
   top: 54%;
   bottom: 0;
   left: 50%;
@@ -917,58 +969,46 @@ main {
   z-index: 99;
   background-color: #ffc23b;
   color: #181e37;
-  -webkit-box-shadow: 10px 10px #181e37;
-          box-shadow: 10px 10px #181e37;
+  -webkit-box-shadow: 15px 15px #27315b;
+          box-shadow: 15px 15px #27315b;
   border-radius: 10px;
   text-align: center;
-}
-
-@media (max-width: 1280px) {
-  .winMessageContainer {
-    width: 60%;
-    height: 85%;
-  }
 }
 
 @media (max-width: 1100px) {
   .winMessageContainer {
     width: 65%;
-    height: 85%;
   }
 }
 
 @media (max-width: 850px) {
   .winMessageContainer {
     width: 70%;
+    height: 600px;
   }
 }
 
 @media (max-width: 650px) {
   .winMessageContainer {
-    width: 80%;
-    height: 80%;
-  }
-}
-
-@media (max-width: 550px) {
-  .winMessageContainer {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 550px;
   }
 }
 
 @media (max-width: 500px) {
   .winMessageContainer {
-    width: 85%;
-    height: 80%;
+    width: 90%;
+    height: 440px;
   }
 }
 
 @media (max-width: 400px) {
   .winMessageContainer {
-    top: 70%;
-    width: 90%;
+    top: 50%;
+    width: 100%;
     height: 100%;
+    -webkit-box-shadow: 10px 10px #27315b;
+            box-shadow: 10px 10px #27315b;
   }
 }
 
@@ -985,36 +1025,30 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 14% 5%;
+  padding: 18% 5%;
 }
 
 @media (max-width: 1100px) {
   .winMessageContainer .winMessage {
-    padding: 10% 5% 0 5%;
+    padding: 25% 5% 0 5%;
   }
 }
 
 @media (max-width: 850px) {
   .winMessageContainer .winMessage {
-    padding: 12% 5% 0 5%;
+    padding: 25% 5% 0 5%;
   }
 }
 
 @media (max-width: 768px) {
   .winMessageContainer .winMessage {
-    padding: 14% 5% 0 5%;
-  }
-}
-
-@media (max-width: 500px) {
-  .winMessageContainer .winMessage {
-    padding: 12% 5% 0 5%;
+    padding: 25% 5% 0 5%;
   }
 }
 
 @media (max-width: 400px) {
   .winMessageContainer .winMessage {
-    padding: 10% 2% 0 2%;
+    padding: 20% 5% 0 2%;
   }
 }
 
@@ -1031,7 +1065,7 @@ main {
 
 @media (max-width: 768px) {
   .winMessageContainer h2 {
-    font-size: 2.2rem;
+    font-size: 3.6rem;
   }
 }
 
@@ -1044,7 +1078,8 @@ main {
 .winMessageContainer p.score {
   text-transform: uppercase;
   font-family: "Yanone Kaffeesatz", sans-serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
   line-height: 1.4;
   padding: 30px 5px;
 }
@@ -1064,7 +1099,7 @@ main {
 
 @media (max-width: 500px) {
   .winMessageContainer p.score {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -1129,4 +1164,436 @@ main {
 
 .winMessageContainer.userWin {
   display: block;
+}
+
+.bounce-in-fwd {
+  -webkit-animation: bounce-in-fwd 2s both;
+  animation: bounce-in-fwd 2s both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-12-11 22:43:12
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation bounce-in-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes bounce-in-fwd {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: scale(0.84);
+    transform: scale(0.84);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  89% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes bounce-in-fwd {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: scale(0.84);
+    transform: scale(0.84);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  89% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.slide-in-left {
+  -webkit-animation: slide-in-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-12-12 1:14:18
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation slide-in-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.bounce-in-right {
+  -webkit-animation: bounce-in-right 2.1s both;
+  animation: bounce-in-right 2.1s both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-12-11 22:58:17
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation bounce-in-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+    transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateX(68px);
+    transform: translateX(68px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateX(32px);
+    transform: translateX(32px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+    transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateX(68px);
+    transform: translateX(68px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateX(32px);
+    transform: translateX(32px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.wobble-hor-bottom {
+  -webkit-animation: wobble-hor-bottom 2.8s both;
+  animation: wobble-hor-bottom 2.8s both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-12-11 23:3:19
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+.vibrate-1 {
+  -webkit-animation: vibrate-1 0.8s linear infinite both;
+  animation: vibrate-1 0.8s linear infinite both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-12-12 0:56:53
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation vibrate-1
+ * ----------------------------------------
+ */
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
 }

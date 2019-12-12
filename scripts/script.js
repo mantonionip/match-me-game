@@ -10,14 +10,14 @@ myApp.celebrities = [
         url: 'assets/robertDeniro.jpg',
         alt: 'Illustrated face of Robert Deniro.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'robertDeniro',
         url: 'assets/robertDeniro.jpg',
         alt: 'Illustrated face of Robert Deniro.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
 
     {
@@ -25,14 +25,14 @@ myApp.celebrities = [
         url: 'assets/davidBowie.jpg',
         alt: 'Illustrated face of David Bowie.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'davidBowie',
         url: 'assets/davidBowie.jpg',
         alt: 'Illustrated face of David Bowie.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
 
     {
@@ -40,14 +40,14 @@ myApp.celebrities = [
         url: 'assets/jackNicholson.jpg',
         alt: 'Illustrated face of Jack Nicholson.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'jackNicholson',
         url: 'assets/jackNicholson.jpg',
         alt: 'Illustrated face of Jack Nicholson.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
 
     {
@@ -55,14 +55,14 @@ myApp.celebrities = [
         url: 'assets/johnTravolta.jpg',
         alt: 'Illustrated face of John Travolta.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'johnTravolta',
         url: 'assets/johnTravolta.jpg',
         alt: 'Illustrated face of John Travolta.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
 
     {
@@ -70,14 +70,14 @@ myApp.celebrities = [
         url: 'assets/tomHanks.jpg',
         alt: 'Illustrated face of Tom Hanks.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'tomHanks',
         url: 'assets/tomHanks.jpg',
         alt: 'Illustrated face of Tom Hanks.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
 
     {
@@ -85,14 +85,14 @@ myApp.celebrities = [
         url: 'assets/joaquinPhoenix.jpg',
         alt: 'Illustrated face of Joaquin Phoenix.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'joaquinPhoenix',
         url: 'assets/joaquinPhoenix.jpg',
         alt: 'Illustrated face of Joaquin Phoenix.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
 
     {
@@ -100,14 +100,14 @@ myApp.celebrities = [
         url: 'assets/tomWaits.jpg',
         alt: 'Illustrated face of Tom Waits.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'tomWaits',
         url: 'assets/tomWaits.jpg',
         alt: 'Illustrated face of Tom Waits.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
 
     {
@@ -115,14 +115,14 @@ myApp.celebrities = [
         url: 'assets/woodyAllen.jpg',
         alt: 'Illustrated face of Woody Allen.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     },
     {
         id: 'woodyAllen',
         url: 'assets/woodyAllen.jpg',
         alt: 'Illustrated face of Woody Allen.',
         title: 'celebrity card front',
-        'aria-label': 'Press enter to see the other side'
+        'aria-label': 'Press enter to see the other side of the card'
     }
 ]
 
@@ -150,7 +150,7 @@ myApp.displayInstructions = () => {
     const closeButton = $('<i class="fas fa-times closeInstructions" aria-label="Click here to close instructions and play the game"></i>');
     const title = $('<h2>How to Play!</h2>');
     const instructions = $("<p>In this illustrated <span>cinematic</span> journey, take a deep breath, walk through the Hall of Fame, stop on each block, and flip a card. Keep the celebrity's face in mind and find their identical pair. When all cards flips correctly, the result pops up!</p>");
-    const icon = $(`<li><img src="assets/mask-favicon.png" alt="illustrated theater mask icon"></li>`)
+    const icon = $(`<li><img src="assets/maskFavicon.png" alt="illustrated theater mask icon"></li>`)
 
     // Appending the content into the DOM
     divTag.append(closeButton, title, instructions, icon);
@@ -170,8 +170,8 @@ myApp.displayCelebrities = (celebrityArray) => {
     // for each item in array 'celebrities'
     celebrityArray.forEach((celebrityItem) => {
         const listTag = $('<li>').addClass('card').attr('id', celebrityItem.id);
-        const cardBack = `<div class="back face"><img src="assets/card-bg.png" alt="Illustrated clapperboard icon"></div>`;
-        const cardFront = $('<div>').addClass('front face');
+        const cardBack = `<div class="back face"><img src="assets/cardBg.png" alt="Illustrated clapperboard icon"></div>`;
+        const cardFront = $('<button>').addClass('front face').attr('title', celebrityItem.title).attr('aria-label', celebrityItem['aria-label']);
         const image = $('<img>').attr('src', celebrityItem.url).attr('alt', celebrityItem.alt);
         
         cardFront.append(image);
@@ -255,7 +255,7 @@ myApp.checkWin = function() {
         // winning message pops up 
         $('.winMessageContainer').addClass('userWin');
         $('.cardContainer').addClass('reduceOpacity');
-        $('.score').html(`You matched the celebrities in <span class="inlineSpan">${totalSec}</span> seconds with just <span class="inlineSpan">${attempt}</span> attempts!!`)
+        $('.score').html(`You matched celebrities in <span class="inlineSpan">${totalSec}</span> seconds with only <span class="inlineSpan">${attempt}</span> attempts!`)
         clearInterval(interval);
 
         // If all cards matched reset the counter and timer

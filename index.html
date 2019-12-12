@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Match Me If You Can!!</title>
-    <link type="image/png" href="assets/mask-favicon.png" rel="icon">
+    <link type="image/png" href="assets/maskFavicon.png" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Boogaloo|Lato|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
@@ -16,18 +16,18 @@
         <header>
             <div class="wrapper">
                 <div class="gameTitle">
-                    <h1>Match Me <span>If You Can!!</span></h1>
+                    <h1 class="bounce-in-fwd">Match Me <span>If You Can!!</span></h1>
                     <div class="startButton">
-                        <button class="letsPlay" tabindex="0" aria-label="Click here to go to the game board">Let's Play</button>
+                        <button class="letsPlay bounce-in-right" tabindex="0" aria-label="Click here to go to the game board">Let's Play</button>
                     </div>
                 </div>
                 
                 <div class="heroImage">
                     <div class="credit" id="credit">
-                        <p class="creditLine">Illustration by © <a href="https://www.agoodson.com/illustrator/pablo/" target="_blank">Pablo Lobato</a></p>
+                        <p class="creditLine wobble-hor-bottom fade-in">Illustration by © <a href="https://www.agoodson.com/illustrator/pablo/" target="_blank">Pablo Lobato</a></p>
                     </div>
                     <li>
-                        <img src="assets/hero-image.png" alt="Illustration of a movie camera with film rolls coming out of the lens.">
+                        <img class="slide-in-left" src="assets/heroImage.png" alt="Illustration of a movie camera with film rolls coming out of the lens.">
                     </li>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                     <div class="winMessage">
                         <h2>congrats!</h2>
                         <p class="score">score displays here</p>
-                        <button class="resetButton">Match Me Again!</button>
+                        <button class="resetButton vibrate-1">Match Me Again!</button>
                     </div>
                 </section>
                 <!-- winning message ends here -->
