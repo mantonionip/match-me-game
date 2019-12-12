@@ -34,6 +34,14 @@
     @media (max-width: 500px) { @content; }
 }
 
+@mixin respond-450 {
+    @media (max-width: 450px) { @content; }
+}
+
+@mixin respond-400 {
+    @media (max-width: 400px) { @content; }
+}
+
 @mixin respond-400 {
     @media (max-width: 400px) { @content; }
 }
