@@ -54,18 +54,6 @@
         
         padding: 18% 5%;
 
-        @include respond-1100 {
-            padding: 25% 5% 0 5%;
-        }
-
-        @include respond-850 {
-            padding: 25% 5% 0 5%;
-        }
-
-        @include respond-768 {
-            padding: 25% 5% 0 5%;
-        }
-
         @include respond-400 {
             padding: 20% 5% 0 2%;
         }
