@@ -4,6 +4,8 @@
 
 [Live Demo](https://mantonionip.github.io/match-me-game/)
 
+![](assets/screenShot.png)
+
 ### Description:
 A cinema-themed memory card game that let users to match the illustrated face of famous film actors! User can see the number of attempts as well as the duration when the match is complete.
 
