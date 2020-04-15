@@ -2,7 +2,15 @@
 
 ## Juno College BootCamp | Project Three | Solo jQuery 
 
-### [Live Demo](https://mantonionip.github.io/match-me-game/)
+[Live Demo](https://mantonionip.github.io/match-me-game/)
 
+### Description:
+A cinema-themed memory card game that let users to match the illustrated face of famous film actors!
 
-#### JavaScript | jQuery | Sass
+#### Built with
+
+* HTML5
+* CSS3/Sass
+* JavaScript
+* jQuery
+* VSCode
