@@ -15,4 +15,4 @@ A cinema-themed memory card game that let users to match the illustrated face of
 * CSS3/Sass
 * JavaScript
 * jQuery
-* VSCode
+* Visual Studio Code
